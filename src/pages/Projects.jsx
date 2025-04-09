@@ -27,7 +27,7 @@ const projects = [
     image: ArnabhaImage,
     description: "My personal portfolio website showcasing my work and skills.",
     techStack: "React, Material-UI",
-    liveDemo: "https://arnabha.dev",
+    liveDemo: "https://arnabha-portfolio.netlify.app/",
   },
   {
     title: "Designer Page",
