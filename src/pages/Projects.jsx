@@ -32,7 +32,7 @@ const projects = [
   {
     title: "Designer Page",
     image: DesignerImg,
-    description: "Designer for Hostpitals.",
+    description: "Designer for Hostpitals with React, MUI, Scala, Firebase.",
     techStack: "React, MUI, Scala, Firebase",
     liveDemo: "https://designer.wiseyak.com/",
   },
