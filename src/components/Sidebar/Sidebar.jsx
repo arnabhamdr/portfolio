@@ -77,9 +77,8 @@ const Sidebar = () => {
           </Typography>
 
           <List sx={{ mt: 2 }}>
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <NavLink
-                key={index}
                 to={item.path}
                 style={({ isActive }) => ({
                   textDecoration: "none",
