@@ -1,30 +1,33 @@
 import React, { useState } from "react";
 import {
   Drawer,
-  Button,
+  IconButton,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  IconButton,
   Divider,
   Box,
   Typography,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import WorkIcon from "@mui/icons-material/Work";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router"; // from react-router
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const toggleDrawer = () => setOpen(!open);
-  const navigate = useNavigate();
-  const navigateTo = (path) => {
-    navigate(path);
-  };
+
+  const navItems = [
+    { text: "Home", path: "/", icon: <HomeIcon /> },
+    { text: "About", path: "/about", icon: <PersonIcon /> },
+    { text: "Projects", path: "/projects", icon: <WorkIcon /> },
+    { text: "Contact", path: "/contact", icon: <ContactMailIcon /> },
+  ];
 
   return (
     <Box>
@@ -72,50 +75,52 @@ const Sidebar = () => {
           >
             My Portfolio
           </Typography>
+
           <List sx={{ mt: 2 }}>
-            {[
-              { text: "Home", icon: <HomeIcon /> },
-              { text: "About", icon: <PersonIcon /> },
-              { text: "Projects", icon: <WorkIcon /> },
-              { text: "Contact", icon: <ContactMailIcon /> },
-            ].map((item, index) => (
-              <ListItem
-                button
+            {navItems.map((item, index) => (
+              <NavLink
                 key={index}
-                onClick={() => {
-                  navigateTo(item.text.toLowerCase());
-                }}
-                sx={{
+                to={item.path}
+                style={({ isActive }) => ({
+                  textDecoration: "none",
+                  color: "white",
+                  backgroundColor: isActive
+                    ? "rgba(255,255,255,0.2)"
+                    : "transparent",
                   borderRadius: "8px",
-                  transition: "0.3s",
-                  "&:hover": {
-                    bgcolor: "rgba(255, 255, 255, 0.2)",
-                  },
-                }}
+                  display: "block",
+                })}
+                onClick={toggleDrawer}
               >
-                <ListItemIcon sx={{ color: "white" }}>{item.icon}</ListItemIcon>
-                <ListItemText primary={item.text} sx={{ color: "white" }} />
-              </ListItem>
+                <ListItem button>
+                  <ListItemIcon sx={{ color: "white" }}>
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={item.text} />
+                </ListItem>
+              </NavLink>
             ))}
           </List>
 
           <Box sx={{ flexGrow: 1, mt: "auto", p: 2, textAlign: "center" }}>
-            <Button
-              variant="contained"
-              onClick={() => navigateTo("/")}
-              sx={{
-                width: "100%",
-                bgcolor: "white",
-                color: "primary.main",
-                fontWeight: "bold",
-                "&:hover": {
-                  bgcolor: "primary.light",
-                },
-              }}
-            >
-              Go to Home
-            </Button>
+            <NavLink to="/" style={{ textDecoration: "none" }}>
+              <Button
+                variant="contained"
+                sx={{
+                  width: "100%",
+                  bgcolor: "white",
+                  color: "primary.main",
+                  fontWeight: "bold",
+                  "&:hover": {
+                    bgcolor: "primary.light",
+                  },
+                }}
+              >
+                Go to Home
+              </Button>
+            </NavLink>
           </Box>
+
           <Divider sx={{ bgcolor: "rgba(255, 255, 255, 0.3)" }} />
         </Box>
       </Drawer>
