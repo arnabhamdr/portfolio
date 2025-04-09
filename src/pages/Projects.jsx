@@ -18,7 +18,7 @@ const projects = [
     title: "Hrdc Admin",
     image: HrdcAdminImg,
     description:
-      "A full-stack e-commerce platform with React, MUI, Scala, Firebase",
+      "A full-stack admin platform for Hrdc hospital with React, MUI, Scala, Firebase",
     techStack: "React, Firebase, Scala, Material-UI",
     liveDemo: "https://admin.hrdc.wiseyak.com",
   },
@@ -32,8 +32,7 @@ const projects = [
   {
     title: "Designer Page",
     image: DesignerImg,
-    description:
-      "A productivity app to manage daily tasks with drag-and-drop features.",
+    description: "Designer for Hostpitals.",
     techStack: "React, MUI, Scala, Firebase",
     liveDemo: "https://designer.wiseyak.com/",
   },
