@@ -63,7 +63,7 @@ const About = () => {
           <strong>💻 Frontend:</strong> React.js, JavaScript (ES6+), HTML5,
           CSS3, Material-UI
           <br />
-          <strong>🛠 Backend:</strong> Scala, PostgreSql
+          <strong>🛠 Backend:</strong> Scala, PostgreSql, NodeJs, ExpressJs
           <br />
           <strong>📦 Tools & DevOps:</strong> Git, GitHub Postman
         </Typography>

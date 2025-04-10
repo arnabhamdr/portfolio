@@ -14,7 +14,7 @@ function Profile() {
         Arnabha Manandhar
       </Typography>
       <Typography variant="h6" color="info">
-        Full Stack Developer | React | MUI | Scala
+        Full Stack Developer | React | MUI | Scala | NodeJs | ExpressJs
       </Typography>
     </Box>
   );
