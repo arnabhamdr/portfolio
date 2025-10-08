@@ -45,13 +45,26 @@ const Projects = () => {
       <Typography variant="h4" sx={{ fontWeight: "bold", mb: 3 }}>
         My Projects
       </Typography>
-      <Typography variant="body1" sx={{ color: "white", mb: 4 }}>
+      <Typography
+        variant="body1"
+        sx={{
+          color: "white",
+          mb: 4,
+          maxWidth: "700px",
+          margin: "0 auto",
+          "& strong": {
+            color: "#00BFFF",
+            fontWeight: "bold",
+          },
+        }}
+      >
         Here are some of the projects I've worked on. I love building
-        **scalable, responsive web apps** using modern technologies.
+        <strong> scalable, responsive web apps</strong> using modern
+        technologies.
       </Typography>
 
       {/* Project Cards Grid */}
-      <Grid container spacing={3} justifyContent="center">
+      <Grid container spacing={3} justifyContent="center" marginTop={10}>
         {projects.map((project, index) => (
           <Grid item key={index} xs={12} sm={6} md={4}>
             <Card sx={{ maxWidth: 345, boxShadow: 3 }}>

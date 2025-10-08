@@ -1378,6 +1378,11 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+marked@^16.4.0:
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-16.4.0.tgz#b0c22707a3add380827a75437131801cd54bf425"
+  integrity sha512-CTPAcRBq57cn3R8n3hwc2REddc28hjR7RzDXQ+lXLmMJYqn20BaI2cGw6QjgZGIgVfp2Wdfw4aMzgNteQ6qJgQ==
+
 minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz"
