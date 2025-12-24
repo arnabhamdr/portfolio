@@ -36,7 +36,7 @@ const Projects = () => {
           <Grid item xs={12} md={4} key={project.title}>
             <Card
               component={motion.div}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.08 }}
               elevation={3}
             >
               <CardContent>

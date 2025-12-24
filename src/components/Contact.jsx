@@ -53,6 +53,7 @@ const Contact = () => {
                 alignItems: "center",
                 gap: 2,
               }}
+              whileHover={{ scale: 1.1 }}
             >
               {item.icon}
               <Box>
