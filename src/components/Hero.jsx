@@ -11,6 +11,7 @@ const Hero = () => {
       transition={{ duration: 0.8 }}
       sx={{
         minHeight: "100vh",
+        marginTop: "100px",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         alignItems: "center",
@@ -34,7 +35,10 @@ const Hero = () => {
         </Button>
       </Box>
 
-      <Avatar src={profile} sx={{ width: 220, height: 220 }} />
+      <Avatar
+        src={profile}
+        sx={{ width: 220, height: 220, marginBottom: "250px" }}
+      />
     </Box>
   );
 };
