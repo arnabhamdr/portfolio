@@ -1,48 +1,40 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Avatar } from "@mui/material";
 import { motion } from "framer-motion";
-import ArnabhaImg from "../assets/image/photo.jpg";
+import profile from "../assets/image/photo.jpg";
 
 const Hero = () => {
   return (
     <Box
       component={motion.section}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       sx={{
-        minHeight: "200vh",
+        minHeight: "100vh",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        px: 8,
-        backgroundImage: `url(${ArnabhaImg})`, // put image in public/
-        backgroundSize: "cover", // fills screen nicely
-        backgroundRepeat: "no-repeat",
+        flexDirection: { xs: "column", md: "row" },
+        alignItems: "center",
+        px: { xs: 3, md: 8 },
+        gap: 5,
       }}
     >
-      <Typography variant="h3" fontWeight="bold">
-        Hi, I'm <span style={{ color: "#1976d2" }}>Arnabha Manandhar</span>
-      </Typography>
+      <Box flex={1}>
+        <Typography variant="h3" fontWeight="bold">
+          Hi, I'm <span style={{ color: "#1976d2" }}>Arnabha</span>
+        </Typography>
+        <Typography variant="h5" mt={2}>
+          Full Stack Developer
+        </Typography>
+        <Typography mt={3} color="text.secondary">
+          Scala • React • Node.js • PostgreSQL
+        </Typography>
 
-      <Typography variant="h5" mt={2}>
-        Full Stack Developer
-      </Typography>
+        <Button variant="contained" sx={{ mt: 4 }} href="#projects">
+          View Projects
+        </Button>
+      </Box>
 
-      <Typography mt={3} maxWidth={600} color="text.secondary">
-        I build scalable web applications using Scala, React, Node.js, MongoDB,
-        PostgreSQL, and Spring Boot.
-      </Typography>
-
-      <Button
-        component={motion.a}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        variant="contained"
-        sx={{ mt: 4, width: "fit-content" }}
-        href="#projects"
-      >
-        View Projects
-      </Button>
+      <Avatar src={profile} sx={{ width: 220, height: 220 }} />
     </Box>
   );
 };
